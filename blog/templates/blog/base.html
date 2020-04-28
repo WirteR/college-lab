@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <div class="header">
+        <button class="btn main_page" onclick="window.location.href = '/';">Головна</button>
+        {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+                <button class="btn header-btn" onclick="window.location.href = '/save';">Додати новину</button>
+            {% endif %}
+            <button class="btn header-btn" onclick="window.location.href = '/auth/logout?path=/';">Вихід</button>
+            <p class="text header-text"><i><b>{{ user.username }}, ви ввійшли
+            {% if user.is_superuser %}
+                як адміністратор
+            {% endif %}  
+            </b></i></p>
+        {% else %}
+            <button class="btn header-btn" onclick="window.location.href = '/auth/login?path=/';">Вхід</button>
+        {% endif %}
+    </div>
+    {% block content %} {% endblock %}
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://www.jacklmoore.com/js/autosize.min.js"></script>
+<script>autosize($('textarea'));</script>
+</html>

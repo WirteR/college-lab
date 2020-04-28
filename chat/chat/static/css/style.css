@@ -1,0 +1,215 @@
+.post_container {
+    width: 40%;
+    height: 40px;
+    margin: auto;
+    background-color: #DFDFDF;
+    margin-top: 20px;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    text-align: center;
+}
+.shadow {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.text {
+    vertical-align: middle;
+}
+
+h4 {
+    margin: 0;
+}
+
+p {
+    text-indent: 20px; 
+}
+
+h2 {
+    text-align: center;
+    margin-top: 25px;
+    font-family: 'Сomic Sans MS', cursive;
+}
+.header {
+    box-shadow: 2px 2px 2px grey;
+    background-color: rgb(109, 143, 243);
+    height: auto;
+    min-width: 30px;
+    width: auto;
+    min-width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    height: 50px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 1px solid greenyellow;
+}
+
+.comment-block {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 1px solid greenyellow;
+    background-color: white;
+}
+
+.comment-btn {
+    height: 30px;
+    border-radius: 2px;
+}
+
+.comment-inp {
+    height: 26px;
+    border-radius: 3px;  
+}
+
+.main_page {
+    width: 11%;
+    margin-left: 3%;
+    border-radius: 2px;
+}
+
+.header-btn {
+    border-radius: 8px;
+    width: 8%;
+    float: right; 
+    margin-right: 3%;
+}
+
+.header-text { 
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    float: right;
+    font-weight: 500;
+    margin-right: 10px;
+    margin-top: 20px;
+    color: greenyellow;
+    font-size: medium;
+    font-style: normal;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bold;
+}
+
+.post-content {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 19px;
+    margin-left: 3%;
+    margin-right: 3%;
+    text-indent: 20px;   
+}
+
+.post-user {
+    margin-left: 3%;
+    float: left;
+}
+
+.post-date {
+    margin-right: 3%;
+    float: right;
+}
+
+.comment-container {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.comment {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: #ebe8e8;
+    width: 30%;
+    border: 1px solid greenyellow;
+    border-radius: 2px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.pmc1 {
+    margin-bottom: 2px;
+    margin-top: 9px;
+    font-size: 18px;
+}
+
+.pmc2 {
+    margin-top: 2px;
+    margin-bottom: 9px;
+    font-size: 15px;
+}
+
+.comment-form {
+    margin-top: 5px;
+}
+
+.container {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
+}
+
+.inp {
+    border: 1px solid greenyellow;
+    border-radius: 2px;
+}
+
+.title {
+    height: 70px;
+    width: 40%;
+}
+
+.news {
+    width: 50%;
+    height: 200px;
+}
+
+.send {
+    margin: auto;
+    background-color: whitesmoke;
+    font-family: "Times New Roman", Times, serif;
+    height: 40px;
+    width: auto;
+    min-width: 15%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.rd {
+    border: 1px solid red;
+}
+
+.message {
+    height: auto;
+    width: 20%;
+    background: rgb(199, 199, 199);
+    border-radius: 5px;
+    border: 1px rgb(110, 250, 133) solid;
+    margin-top: 20px;
+    left: 10%;
+    float: left;
+}
+
+.r-message {
+    right: 10%;
+    float: right;
+}
+.ms {
+    width: 100%;
+    float: left;
+}
+
+.ms-form {
+    margin: auto;
+    margin-top: 20px;
+    width: 20%;
+    height: auto;
+}

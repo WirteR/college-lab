@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h2>Новини</h2>
+{% if posts %}
+    {% for x in posts %}
+        <div class="post_container shadow">
+            <a class="text" href="/{{ x.id }}"><h4>{{x.title}}</h4></a><br>
+        </div>
+    {% endfor %}
+{% else %}
+    Немає активних новин
+{% endif %}
+{% endblock %}

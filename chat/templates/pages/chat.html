@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head background="blue">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body>
+    <div class="header">
+        {% if user.is_authenticated %}
+            <button class="btn header-btn" onclick="window.location.href = '/auth/logout?path=chat';">Вихід</button>
+            <p class="text header-text"><i><b>{{ user.username }}, ви ввійшли
+            </b></i></p>
+        {% else %}
+            <button class="btn header-btn" onclick="window.location.href = '/auth/login?path=chat';">Вхід</button>
+        {% endif %}
+    </div>
+    {% if user.is_authenticated %}
+<h3>Повідомлення</h3>
+<br>
+{% if messages %}
+    {% for item in messages %}
+        <div class="ms">
+            <div class="message">
+                <b>{{ item.user_id.username }}:</b><br>{{ item.message }}<div>{{ item.date }}</div>
+                <br>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+{% else %}
+    <b><p style="color: red;">Немає доступних повідомлень</p></b>
+{% endif %}
+<br>
+<div class="ms">
+<form action="{% url 'chat' %}" method="post" class="ms-form">
+    {% csrf_token %}
+    <input type="text" placeholder="Повідомлення" name="message" class="">
+    <input type="submit" value="Відправити">
+</form>
+</div>
+{% else %}
+    <p>Ви не можете надіслати Повідомлення. Потрібно <a href="/auth/login?path=chat">увійти</a> або <a href="/auth/register?path=chat">зареєструватися</a>.</p>
+{% endif %}
+</body>
+</html>
+

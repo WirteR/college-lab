@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <p><b>Введіть заголовок статті:</b></p>
+        <form action="/save/" method="POST" id="news-form">
+            {% csrf_token %}
+            <textarea rows="1" type="text" name="title" class="title inp"></textarea>
+            <p><b>Введіть текст статті:</b></p>
+            <textarea rows="1" name="text" class="news inp"></textarea>
+            <br>
+            <input type="submit" value="Опублікувати" class="send inp" onclick="return checkform()">
+        </form>
+    </div>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}

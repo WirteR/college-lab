@@ -1,0 +1,23 @@
+Аутентифікація користувача 
+<br>
+
+{% if error %}
+    <p style="color:hsl(0, 100%, 50%)">{{ error }}</p>
+    <br><br>
+{% endif %}
+
+<form action="/auth/validate_auth_data/" method="POST">
+    {% csrf_token %}
+    {% if url %}
+    <input type="hidden" value="{{ url }}" name="url">
+    {% endif %}
+    <input type="text", name="username", placeholder="User">
+    <input type="password", name="password", placeholder="Pass">
+    <input type="submit" value="Authorize">
+</form>
+<p>
+{% if url %}
+<a href="/auth/register?path=/">Зареєструвати користувача</a></p>
+{% else %}
+<a href="/auth/register">Зареєструвати користувача</a></p>
+{% endif %}

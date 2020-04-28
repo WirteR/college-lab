@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h3>{{ post.title }}</h3>
+    <p class="post-content">{{ post.news_text}}</p>
+    <br>
+    <p class="post-user">Posted by {{ post.user_id.username }}</p>
+    <p class="post-date">{{ post.posted }}</p>
+    <br><br>
+    <div class="comment-container">
+    <h2 style="margin-left: 3%;">Comments</h2>
+    {% if comments %}
+        {% for x in comments %}
+            <div class="comment">
+                <p class='pmc1'><b>{{ x.user_id }}</b></p>
+                <p class='pmc2'>{{ x.comment }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Коментарів ще немає. Ви можете бути першим</p>
+    {% endif %}
+    
+    <h4 style="margin-left: 1%;">Залишити коментар:</h4>
+    {% if user.is_authenticated %}
+        <form class="comment-form" action="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="comment" class="comment-block comment-inp">
+            <input type="submit" value="Поместить комментарий" class="comment-block comment-btn">
+        </form>
+   
+    {% else %}
+        <p>Ви не можете залишити коментар. Потрібно <a href="/auth/login?path=/">увійти</a> або <a href="/auth/register?path=/">зареєструватися</a>.</p>
+    {% endif %}
+    </div>
+{% endblock %}

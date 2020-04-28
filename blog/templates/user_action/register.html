@@ -1,0 +1,15 @@
+{% if error %}
+    {{ error }}
+    <br><br>
+{% endif %}
+
+<form action='/auth/validate_register_data/' method="POST">
+    {% csrf_token %}
+    {% if url %}
+        <input type="hidden", name="url" value="{{url}}">
+    {% endif %}
+    <input type="text" name='username', placeholder="Login">
+    <input type="password" name="password1" placeholder="Pass">
+    <input type="password" name="password2" placeholder="Pass">
+    <input type="submit">
+</form>
